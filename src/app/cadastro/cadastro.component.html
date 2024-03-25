@@ -1,0 +1,45 @@
+<!--Essa tela será formada pelos inputs:
+
+Nome
+Email
+Data Nascimento
+Senha
+Confirmar Senha
+Também serão exibidos os botões:
+
+Cadastrar
+Que se clicado, com os campos todos preenchidos e os inputs Senha e Confirmar Senha com os mesmos valores, irá cadastrar o usuário informado (colocando seu email e senha na localStorage na lista de usuários cadastrados)
+Voltar
+Que, ao ser clicado, volta para a tela de login-->
+
+<form (ngSubmit)="onSubmit()" [formGroup]="cadastroForm" class="form-content">
+    <fieldset>
+      <h2>Cadastro</h2>
+      <label for="name">Nome completo: 
+        <input id="name" name="name" type="text" formControlName="nome">
+      </label>
+      <label for="email">Endereço de email: 
+        <input id="email" name="email" type="email" formControlName="email">
+      </label>
+      <label for="date">Data de nascimento: 
+        <input id="date" name="date" type="date" formControlName="dataNascimento">
+      </label>
+      <label for="weight">Peso (kg):
+        <input id="weight" name="weight" type="number" formControlName="peso">
+    </label>
+    <label for="height">Altura (cm):
+        <input id="height" name="height" type="number" formControlName="altura">
+    </label>
+      <label for="password">Senha: 
+        <input id="password" name="password" type="password" formControlName="senha">
+      </label>
+      <label for="confirmPassword">Confirme sua senha: 
+        <input id="confirmPassword" name="confirmPassword" type="password" formControlName="confirmarSenha">
+      </label>
+    </fieldset>
+    <fieldset class="form-btn">
+      <button type="submit">Cadastrar</button>
+      <button type="button" (click)="goToLogin()">Voltar</button>
+    </fieldset>
+  </form>
+  

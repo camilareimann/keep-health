@@ -1,0 +1,72 @@
+[
+  {
+      "id": 1,
+      "name": "Maçã",
+      "description": "Fruta rica em fibras e antioxidantes, conhecida por promover a saúde digestiva e cardiovascular.",
+      "calories": 72,
+      "image": "/assets/01-maca.png"
+  },
+  {
+      "id": 2,
+      "name": "Romã",
+      "description": "Fruta exótica com sementes suculentas, reconhecida por suas propriedades antioxidantes e anti-inflamatórias.",
+      "calories": 68,
+      "image": "/assets/02-roma.png"
+  },
+  {
+      "id": 3,
+      "name": "Mirtilo",
+      "description": "Pequenas bagas azuis repletas de nutrientes, associadas à melhoria da saúde cerebral e ocular.",
+      "calories": 57,
+      "image": "/assets/03-mirtilo.png"
+  },
+  {
+      "id": 4,
+      "name": "Uvas",
+      "description": "Frutas suculentas usadas para fazer vinho e conhecidas por seu alto teor de antioxidantes, benéficas para o coração.",
+      "calories": 69,
+      "image": "/assets/04-uva.png"
+  },
+  {
+      "id": 5,
+      "name": "Limão",
+      "description": "Fruta cítrica refrescante, rica em vitamina C e usada em muitos pratos culinários e bebidas.",
+      "calories": 17,
+      "image": "/assets/06-limao.png"
+  },
+  {
+      "id": 6,
+      "name": "Laranja",
+      "description": "Fruta cítrica vibrante, rica em vitamina C e associada à melhoria do sistema imunológico.",
+      "calories": 62,
+      "image": "/assets/05-laranja.png"
+  },
+  {
+      "id": 7,
+      "name": "Melancia",
+      "description": "Fruta refrescante com alto teor de água, ideal para hidratação e baixa em calorias.",
+      "calories": 30,
+      "image": "/assets/08-melancia.png"
+  },
+  {
+      "id": 8,
+      "name": "Morango",
+      "description": "Fruta vermelha suculenta, rica em antioxidantes e associada à saúde do coração e à pele.",
+      "calories": 32,
+      "image": "/assets/07-morango.png"
+  },
+  {
+      "id": 9,
+      "name": "Coco",
+      "description": "Fruta tropical com água doce e carne cremosa, rica em gorduras saudáveis e usada em muitas receitas.",
+      "calories": 48,
+      "image": "/assets/09-coco.png"
+  },
+  {
+      "id": 10,
+      "name": "Abacaxi",
+      "description": "Fruta tropical doce e suculenta, rica em vitamina C e bromelaína, enzima digestiva.",
+      "calories": 48,
+      "image": "/assets/10-abacaxi.png"
+  }
+]

@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="content">
+        <div class="profile-container form-content">
+            <div *ngIf="userData">
+                <h2>Perfil do Usuário</h2>
+                <p>Nome: {{ userData.nome }}</p>
+                <p>Email: {{ userData.email }}</p>
+                <p>Peso: {{ userData.peso }} kg</p>
+                <p>Altura: {{ userData.altura | conversorAltura }}</p>
+                <p>Código do Usuário: {{ userData.codigoUsuario }}</p>
+                <label>Localização (insira seu CEP): <input type="text" [(ngModel)]="cep"></label>
+                <button class="form-btn" (click)="searchAddress()">Buscar</button>
+                
+                <div class="showAddress" *ngIf="showAddress">
+                    {{ address }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

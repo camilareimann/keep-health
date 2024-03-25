@@ -1,0 +1,70 @@
+h2 {
+  text-align: center;
+  background: linear-gradient(135deg, #ff00ea, #00ffec);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: -webkit-text-fill-color 0.3s ease;
+}
+
+.form-content {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 5px;
+  font-family: monospace;
+  font-size: 1.2em;
+  background-color: #00ffee41; /* Light green background color */
+}
+
+.form-content fieldset {
+  margin-bottom: 20px;
+  border: none;
+  padding-right: 35px;
+}
+
+.form-content label {
+  display: block;
+  margin-bottom: 20px;
+  font-weight: lighter; /* Lighter font weight */
+  color: #666; /* Lighter font color for input titles */
+}
+
+.form-content input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-top: 5px;
+  box-sizing: border-box;
+}
+
+.form-content .form-btn button {
+  margin-right: 10px;
+}
+
+.form-content button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #ff00ea;
+  color: #fff;
+  cursor: pointer;
+}
+
+.form-content button:hover {
+  color: #666;
+  background-color: #00ffec;
+}
+
+.form-content button[type="submit"] {
+  background-color: #ff00ea;
+}
+
+.form-content button[type="submit"]:hover {
+  background-color: #00ffec;
+}
+
+.link-cadastro {
+  margin-top: 14px;
+  font-size: .8em;
+}

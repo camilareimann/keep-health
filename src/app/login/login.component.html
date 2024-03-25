@@ -1,0 +1,23 @@
+<!--Neste exercício vamos criar a tela de login que irá conter:
+
+Um input para o email do usuário;
+Um inpit para a senha;
+Um botão ‘Entrar’;
+Um botão ‘Esqueci a senha’
+Um botão ou link (à sua escolha) para ‘Cadastrar-me’-->
+
+<form (ngSubmit)="onSubmit()" [formGroup]="loginForm" class="form-content">
+    <fieldset>
+        <h2>Login</h2>
+        <label for="email">Endereço de email: <input id="email" name="email" type="text" formControlName="email"></label>
+        <label for="password">Senha: <input id="password" name="password" type="password" formControlName="password"></label>
+    </fieldset>
+    <fieldset class="form-btn">
+        <button type="submit">Entrar</button>
+        <button type="button" (click)="esqueciSenha()">Esqueci minha senha</button>
+        <div class="link-cadastro">
+            <a routerLink="/cadastro">Cadastrar-me</a>
+        </div>
+        <!--<button type="button" (click)="redirectToCadastro()">Cadastrar</button>-->
+    </fieldset>
+</form>
