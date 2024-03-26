@@ -10,8 +10,6 @@ import { Router, RouterLink } from '@angular/router';
   styleUrl: './login.component.css'
 })
 
-
-
 export class LoginComponent implements OnInit {
 
   loginForm!: FormGroup;
@@ -28,8 +26,6 @@ export class LoginComponent implements OnInit {
       password: new FormControl(''),
     });
   }
-
-
 
   onSubmit() {
     const storedData = JSON.parse(localStorage.getItem('cadastroData') || '{}');
@@ -56,20 +52,3 @@ export class LoginComponent implements OnInit {
   }
 
 }
-
-
-
-
-  // onSubmit() {
-  //   const storedData = JSON.parse(localStorage.getItem('cadastroData') || '{}');
-  
-  //   const email = this.loginForm.get('email')?.value;
-  //   const password = this.loginForm.get('password')?.value;
-  
-  //   if (storedData.email === email && storedData.senha === password) {
-  //     // this.router.navigate(['/home']);
-  //     alert('logou');
-  //   } else {
-  //     alert('Usuário ou senha inválidos');
-  //   }
-  // }

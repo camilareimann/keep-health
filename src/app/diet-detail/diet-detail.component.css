@@ -23,12 +23,12 @@ section{
 
 .image {
   text-align: center;
-  margin-right: 20px; /* Add space between image and details */
+  margin-right: 20px; 
 }
 
 .image img {
-  max-width: 100%; /* Ensure image does not exceed container width */
-  height: auto; /* Maintain aspect ratio */
+  max-width: 100%; 
+  height: auto; 
 }
 
 .details {

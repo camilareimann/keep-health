@@ -36,9 +36,11 @@ export class CadastroComponent implements OnInit {
   onSubmit() {
     
     if (this.cadastroForm.valid && this.cadastroForm.value.senha === this.cadastroForm.value.confirmarSenha) {
+      
       const userCode = Math.floor(1000 + Math.random() * 9000);
       const formData = this.cadastroForm.value;
       formData.codigoUsuario = userCode;
+      
       localStorage.setItem('cadastroData', JSON.stringify(formData));
       alert('Formulario enviado');
       // console.log('Formulário enviado e dados salvos no local storage:', formData);
