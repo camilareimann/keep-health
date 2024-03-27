@@ -21,7 +21,7 @@
 
 
     <div class="row justify-content-center">
-      <div class="display-flex">
+      <div class="grid-section">
           <div class="card" *ngFor="let diet of filteredDiets" (click)="redirectToDetail(diet.id)">
               <img src="{{ diet.image }}" alt="{{ diet.name }}">
               <h3>{{ diet.name }}</h3>
@@ -32,5 +32,4 @@
     </div>
   </div>
 </section>
-
 

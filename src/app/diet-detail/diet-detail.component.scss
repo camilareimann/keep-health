@@ -1,16 +1,9 @@
+@import '../../assets/styles/variables';
+
 .titulo{
   font-family: monospace;
   font-size: 30px;
-  background: linear-gradient(135deg, #ff00ea, #00ffec);
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  transition: -webkit-text-fill-color 0.3s ease;
-}
-
-.titulo:hover {
-  background: linear-gradient(135deg, #00ffec, #ff00ea);
-  background-clip: text; 
-  -webkit-text-fill-color: transparent; 
+  @include estiloTitulos2;
 }
 
 section{
@@ -35,7 +28,7 @@ section{
   background-color: #00ffee41;
   padding: 50px;
   border-radius: 30px;
-  flex-grow: 1;
+  width: 800px;
   font-family: sans-serif;
   justify-content: center;
   align-items: center;
@@ -60,5 +53,6 @@ p{
 
   .details{
     width: 100%;
+    max-width: 90%;
   }
 }

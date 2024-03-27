@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   standalone: true,
   imports: [ReactiveFormsModule, CommonModule],
   templateUrl: './cadastro.component.html',
-  styleUrl: './cadastro.component.css',
+  styleUrl: './cadastro.component.scss',
 })
 
 export class CadastroComponent implements OnInit {
@@ -40,7 +40,7 @@ export class CadastroComponent implements OnInit {
       const userCode = Math.floor(1000 + Math.random() * 9000);
       const formData = this.cadastroForm.value;
       formData.codigoUsuario = userCode;
-      
+      console.log(formData);
       localStorage.setItem('cadastroData', JSON.stringify(formData));
       alert('Formulario enviado');
       // console.log('Formulário enviado e dados salvos no local storage:', formData);

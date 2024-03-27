@@ -10,7 +10,7 @@ import { FormsModule } from '@angular/forms';
   standalone: true,
   imports: [CommonModule, RouterModule, ConversorAlturaPipe, FormsModule],
   templateUrl: './perfil.component.html',
-  styleUrl: './perfil.component.css'
+  styleUrl: './perfil.component.scss'
 })
 
 export class PerfilComponent implements OnInit {
@@ -22,7 +22,32 @@ export class PerfilComponent implements OnInit {
   constructor(private route: ActivatedRoute, private addressService: AddressService) {}
 
   ngOnInit(): void {
-    this.userData = history.state.userData;
+    //CODIGO ANTIGO this.userData = history.state.userData;
+
+const storedData = localStorage.getItem('cadastroData');
+
+if (storedData && document.getElementById('profileData')) {
+    const userData = JSON.parse(storedData);
+    
+    const profileHtml = `
+        <p><strong>Name:</strong> ${userData.nome}</p>
+        <p><strong>Email:</strong> ${userData.email}</p>
+        <p><strong>Date of Birth:</strong> ${userData.dataNascimento}</p>
+        <p><strong>Weight:</strong> ${userData.peso} kg</p>
+        <p><strong>Height:</strong> ${userData.altura} cm</p>
+    `;
+
+    const profileDataElement = document.getElementById('profileData');
+
+    if (profileDataElement) {
+        profileDataElement.innerHTML = profileHtml;
+    } else {
+        console.error("Element with ID 'profileData' not found.");
+    }
+} else {
+    console.error("No profile data found or element with ID 'profileData' not found.");
+}
+
   }
 
   searchAddress(): void {

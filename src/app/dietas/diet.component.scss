@@ -1,0 +1,56 @@
+@import '../../assets/styles/variables';
+
+
+.title {
+  @include estiloTitulos;
+}
+
+.search-field {
+  font-family: monospace;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+input {
+  margin-bottom: 30px;
+  width: 600px;
+  height: 40px;
+  padding: 10px;
+  border-radius: 20px;
+  border: 2px solid #ccc;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s;
+
+  &:focus {
+    border-color: $main-color;
+  }
+
+}
+
+.grid-section {
+  display: grid;
+  gap: 20px;
+  padding-top: 0;
+  padding-left: 70px;
+  padding-right: 70px;
+  grid-template-columns: repeat(3, 1fr);
+
+  .card {
+    @include card;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .grid-section {
+    padding: 0;
+    grid-template-columns: 1fr;
+  }
+
+  input {
+    width: 100%;
+  }
+}

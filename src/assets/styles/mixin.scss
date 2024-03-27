@@ -1,0 +1,72 @@
+@mixin estiloTitulos {
+    background: linear-gradient(135deg, #ff00ea, #00ffec);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: -webkit-text-fill-color 0.3s ease;
+
+    &:hover {
+        background: linear-gradient(135deg, #00ffec, #ff00ea);
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}
+
+@mixin estiloTitulos2 {
+    background: linear-gradient(135deg, #ff00ea, #00ffec);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: -webkit-text-fill-color 0.3s ease;
+}
+
+@mixin card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+
+    &:hover {
+        cursor: pointer;
+        animation: shake 0.5s ease;
+    }
+
+    @keyframes shake {
+        0% {
+            transform: translateX(0);
+        }
+
+        25% {
+            transform: translateX(-5px);
+        }
+
+        50% {
+            transform: translateX(5px);
+        }
+
+        75% {
+            transform: translateX(-3px);
+        }
+
+        100% {
+            transform: translateX(0);
+        }
+    }
+
+    img {
+        border-radius: 8px;
+        margin-bottom: 10px;
+        max-width: 100%;
+        height: auto;
+    }
+
+    h3 {
+        font-family: monospace;
+        font-size: 22px;
+        margin-bottom: 10px;
+        @include estiloTitulos2
+    }
+
+    p {
+        color: #666;
+    }
+}
