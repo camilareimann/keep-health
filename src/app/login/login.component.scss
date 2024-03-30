@@ -1,8 +1,10 @@
 @import '../../assets/styles/variables';
 
 h2 {
+  font-size: 30px;
+  font-weight: 700;
+  @include estiloTitulos;
   text-align: center;
-  @include estiloTitulos2;
 }
 
 .form-content {
@@ -39,6 +41,7 @@ h2 {
 
 .form-content .form-btn button {
   margin-right: 10px;
+  margin-bottom: 10px;
 }
 
 .form-content button {

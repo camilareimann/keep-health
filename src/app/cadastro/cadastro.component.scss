@@ -1,6 +1,7 @@
 @import '../../assets/styles/variables';
+@import '../../assets/styles/mixin.scss';
 
-.form-content {
+.cadastro {
   max-width: 400px;
   margin: 0 auto;
   padding: 20px;
@@ -8,22 +9,24 @@
   font-family: monospace;
   font-size: 1.2em;
   background-color: #00ffee41;
+
+  
 }
 
-.form-content fieldset {
+.cadastro fieldset {
   margin-bottom: 20px;
   border: none;
   padding-right: 35px;
 }
 
-.form-content label {
+.cadastro label {
   display: block;
   margin-bottom: 10px;
   font-weight: lighter;
   color: #666;
 }
 
-.form-content input {
+.cadastro input {
   width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
@@ -32,16 +35,22 @@
   box-sizing: border-box;
 }
 
-.form-content .form-btn button {
+.cadastro .form-btn button {
   margin-right: 10px;
 }
 
 h2 {
+  font-size: 30px;
+  font-weight: 700;
+  @include estiloTitulos;
   text-align: center;
-  @include estiloTitulos2;
 }
 
-.form-content button {
+.form-btn{
+  margin-top: 20px;
+}
+
+.cadastro button {
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
@@ -50,19 +59,26 @@ h2 {
   cursor: pointer;
 }
 
-.form-content button:hover {
+.cadastro button:hover {
   color: #666;
   background-color: #00ffec;
 }
 
-.form-content button[type="submit"] {
+.cadastro button[type="submit"] {
   background-color: $main-color;
 }
 
-.form-content button[type="submit"]:hover {
+.cadastro button[type="submit"]:hover {
   background-color: #00ffec;
 }
 
-.has-error {
-  border: 1px solid red;
-}
+    .erro-formulario {
+      label, span {
+        color: red;
+      }
+
+      input {
+        border-color: red;
+      }
+    }
+

@@ -1,59 +1,61 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { CustomValidatorService } from '../../../shared/services/custom-validator.service';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cadastro',
   standalone: true,
-  imports: [ReactiveFormsModule, CommonModule],
+  imports: [ReactiveFormsModule, CommonModule], //Importação do Modulo de Reative Forms
+  providers: [CustomValidatorService],
   templateUrl: './cadastro.component.html',
-  styleUrl: './cadastro.component.scss',
+  styleUrl: './cadastro.component.scss'
 })
+export class CadastroComponent {
+  form = new FormGroup({
+    nome: new FormControl('', [Validators.required, this.customValidatorService.validarNomeCompleto()]),
+    email: new FormControl('', [Validators.required, Validators.email]),
+    dataNascimento: new FormControl('', Validators.required),
+    peso: new FormControl('', [Validators.required, Validators.max(300)]),
+    altura: new FormControl('', [Validators.required, Validators.max(280)]),
+    senha: new FormControl('', [Validators.minLength(4), Validators.required]),
+    confirmarSenha: new FormControl('', [Validators.minLength(4), Validators.required]),
+    codigoUsuario: new FormControl('')
+  });
 
-export class CadastroComponent implements OnInit {
+  constructor(
+    private customValidatorService: CustomValidatorService,
+    private Router: Router) { }
 
-  cadastroForm!: FormGroup;
-  
-  constructor(private router: Router) { }
-
-  ngOnInit() {
-    this.createForm();
-  }
-
-  createForm() {
-    this.cadastroForm = new FormGroup({
-      nome: new FormControl('', [Validators.required, Validators.minLength(5)]),
-      email: new FormControl('', [Validators.required, Validators.email]),
-      dataNascimento: new FormControl('', Validators.required),
-      peso: new FormControl('', Validators.required),
-      altura: new FormControl('', Validators.required),
-      senha: new FormControl('', [Validators.required, Validators.minLength(6)]),
-      confirmarSenha: new FormControl('', Validators.required)
-    });
-  }
-
-  onSubmit() {
-    
-    if (this.cadastroForm.valid && this.cadastroForm.value.senha === this.cadastroForm.value.confirmarSenha) {
-      
+  cadastrar() {
+    if (this.form.valid && this.form.value.senha === this.form.value.confirmarSenha) {
       const userCode = Math.floor(1000 + Math.random() * 9000);
-      const formData = this.cadastroForm.value;
-      formData.codigoUsuario = userCode;
-      console.log(formData);
-      localStorage.setItem('cadastroData', JSON.stringify(formData));
-      alert('Formulario enviado');
-      // console.log('Formulário enviado e dados salvos no local storage:', formData);
-      this.cadastroForm.reset();
-      this.router.navigate(['/login']);
+
+      // Defina o código do usuário diretamente no objeto de formulário
+      this.form.patchValue({ codigoUsuario: userCode.toString() });
+
+      const formData = this.form.value;
+
+      localStorage.setItem('cadastroData', JSON.stringify(formData))
+      
+      this.form.controls['nome'].setValue('');
+      this.form.controls['email'].setValue('');
+      this.form.controls['dataNascimento'].setValue('');
+      this.form.controls['peso'].setValue('');
+      this.form.controls['altura'].setValue('');
+      this.form.controls['senha'].setValue('');
+      this.form.controls['confirmarSenha'].setValue('');
+
+      this.Router.navigate(['/login']);
+
     } else {
-      alert("Formulário inválido, confira os dados");
-      // this.showError = true; 
+      alert('forumulario invalido')
     }
   }
 
-  goToLogin() {
-    this.router.navigate(['/login']);
+  goToLogin(){
+    this.Router.navigate(['/login']);
   }
 
 }

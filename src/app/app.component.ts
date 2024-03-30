@@ -2,7 +2,7 @@ import { CommonModule, DatePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterOutlet } from '@angular/router';
-import { HeaderComponent } from '../../shared/components/header/header.component';
+import { SharedModule } from '../../shared/shared/shared.module'; 
 import { HomeComponent } from './home/home.component';
 
 @Component({
@@ -12,7 +12,7 @@ import { HomeComponent } from './home/home.component';
   standalone: true,
   imports: [
     CommonModule,
-    HeaderComponent,
+    SharedModule,
     RouterOutlet,
   ],
 })

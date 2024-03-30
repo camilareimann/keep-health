@@ -1,7 +1,9 @@
 @import '../../assets/styles/variables';
 
 
-.title {
+h2 {
+  font-size: 30px;
+  font-weight: 700;
   @include estiloTitulos;
 }
 

@@ -70,3 +70,15 @@
         color: #666;
     }
 }
+
+@mixin erro-control {
+
+    label,
+    span {
+        color: red;
+    }
+
+    input {
+        border-color: red;
+    }
+}
