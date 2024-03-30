@@ -7,7 +7,7 @@ import { DietComponent } from './dietas/diet.component';
 import { DietDetailComponent } from './diet-detail/diet-detail.component';
 import { ExerciciosComponent } from './exercicios/exercicios.component';
 export const routes: Routes = [
-
+    
     {
         path: "", //Rota inicial (assim que o projeto é 'buildado' ele entra nessa rota)
         redirectTo: "home", //redirecionamento (qual path que será redirecionado ao entrar na rota "")

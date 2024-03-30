@@ -69,17 +69,17 @@ export class ExerciciosComponent implements OnInit {
   getExerciseImage(exercise: string): string {
     switch (exercise) {
       case 'corrida':
-        return '../assets/esportes/corrida-image.png';
+        return 'https://res.cloudinary.com/dvyjnsumc/image/upload/v1711842587/corrida-image_vpcpye.png';
       case 'yoga':
-        return '../assets/esportes/yoga-image.png';
+        return 'https://res.cloudinary.com/dvyjnsumc/image/upload/v1711842587/yoga-image_tmyixr.png';
       case 'bicicleta':
-        return '../assets/esportes/bicicleta-image.png';
+        return 'https://res.cloudinary.com/dvyjnsumc/image/upload/v1711842587/bicicleta-image_xijynk.png';
       case 'esporte':
-        return '../assets/esportes/esporte-image.png';
-      case 'natacao':
-        return '../assets/esportes/natacao-image.png';
-      case 'musculacao':
-        return '../assets/esportes/musculacao-image.png';
+        return 'https://res.cloudinary.com/dvyjnsumc/image/upload/v1711842587/esporteColetivo-image_fn2pcz.png';
+      case 'natação':
+        return 'https://res.cloudinary.com/dvyjnsumc/image/upload/v1711842587/natacao-image_f0efrb.png';
+      case 'musculação':
+        return 'https://res.cloudinary.com/dvyjnsumc/image/upload/v1711842587/musculacao-image_cil8jj.png';
       default:
         return '';
     }

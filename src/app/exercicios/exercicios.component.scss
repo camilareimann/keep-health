@@ -4,13 +4,13 @@ h2 {
     font-size: 30px;
     font-weight: 700;
     @include estiloTitulos;
-  }
+}
 
-  .header{
+.header {
     padding-left: 70px;
     padding-right: 70px;
     margin-bottom: 30px;
-  }
+}
 
 .grid-section {
     display: grid;
@@ -19,7 +19,7 @@ h2 {
     padding-left: 70px;
     padding-right: 70px;
     grid-template-columns: repeat(3, 1fr);
-    
+
     .card {
         background-color: #fff;
         border-radius: 8px;
@@ -27,16 +27,17 @@ h2 {
         padding: 20px;
         text-align: center;
 
-        .card-header{
+        .card-header {
             background: #fff;
         }
 
-        .data{
+        .data {
             margin-top: 5px;
             font-size: 14px;
         }
-        .tituloEsporte{
-            text-transform:uppercase;
+
+        .tituloEsporte {
+            text-transform: uppercase;
             @include estiloTitulos2;
             font-size: 25px;
             font-weight: 700;
@@ -48,19 +49,19 @@ h2 {
             max-width: 100%;
             height: auto;
         }
-    
+
         h3 {
             font-family: monospace;
             font-size: 22px;
             margin-bottom: 10px;
             @include estiloTitulos2
         }
-    
+
         p {
             color: #666;
         }
 
-        .card-footer{
+        .card-footer {
             background: #fff;
         }
     }
@@ -81,7 +82,8 @@ h2 {
     }
 }
 
-.btn-primary, .btn-success {
+.btn-primary,
+.btn-success {
     margin-right: 5px;
     padding: 10px 20px;
     border: none;
@@ -103,17 +105,17 @@ h2 {
     background-color: $main-color;
     color: #fff;
     cursor: pointer;
-  }
-  
-  .addNew:hover {
+}
+
+.addNew:hover {
     color: #666;
     background-color: #00ffec;
-  }
+}
 
-.modal-footer{
+.modal-footer {
     margin-top: 20px;
 
-    .btn-danger{
+    .btn-danger {
         margin-right: 10px;
     }
 }
