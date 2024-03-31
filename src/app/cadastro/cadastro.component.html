@@ -1,6 +1,6 @@
 <div class="cadastro">
   <h2>Cadastro</h2>
-  <form (ngSubmit)="cadastrar()" [formGroup]="form"> <!-- Vinculo ao form group -->
+  <form (ngSubmit)="cadastrar()" [formGroup]="form" class="fieldset"> <!-- Vinculo ao form group -->
     <div class="elemento-formulario" [ngClass]="{'erro-formulario': (form.controls.nome.dirty ||
         form.controls.nome.touched) &&
         form.controls.nome.errors}">

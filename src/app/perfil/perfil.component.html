@@ -12,10 +12,10 @@
             </div>
         </div>
         <label><b>Localização (insira seu CEP)</b> : <input type="text" [(ngModel)]="cep"></label>
-                <button class="form-btn" (click)="searchAddress()">Buscar</button>
-                
-                <div class="showAddress" *ngIf="showAddress">
-                    {{ address }}
-                </div>
+        <button class="form-btn" (click)="searchAddress()">Buscar</button>
+
+        <div class="showAddress" *ngIf="showAddress">
+            {{ address }}
+        </div>
     </div>
 </div>

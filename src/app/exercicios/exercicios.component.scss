@@ -175,7 +175,8 @@ h2 {
     }
 
     .grid-section {
-        padding: 0;
+        padding-left: 10px;
+        padding-right: 10px;
         grid-template-columns: 1fr;
     }
 }
