@@ -1,25 +1,26 @@
 <div class="container">
-    <div class="row pt-3 header">
-        <div class="col-6">
+    <div class="row-header">
+        <div>
             <h2 class="heading-section">Lista de exercícios</h2>
         </div>
-        <div class="col-6 text-end">
+        <div class="headerButton">
             <button pButton type="button" label="Add New" icon="pi pi-plus" (click)="showDialog()" class="addNew">Add New</button>
         </div>
     </div>
     <div class="row justify-content-center">
+        @if(exerciseList.length !== 0){
         <div class="grid-section">
-            @if(exerciseList.length !== 0){
+            
                 
                 @for (item of exerciseList; track $index){
                 <div class="card">
-                    <div class="card-header">
+                    <div class="cardheader">
                         <div class="row">
                             <div class="col-12 tituloEsporte">
                                 {{ item.exercise }}
                             </div>
                             <div class="col-12 data">
-                                {{ item.date }}
+                                {{ item.date | date:'dd-MM-yyyy' }}
                             </div>
                         </div>
                     </div>
@@ -29,7 +30,7 @@
                                 <img [src]="getExerciseImage(item.exercise)" alt="Exercise Image">
                             </div>
                             <div class="exercise-info">
-                                <p class="discancia"><strong>Distância:</strong> {{ item.distance }} km </p>
+                                <p class="discancia"><strong>Distância(km):</strong> {{ item.distance }} km </p>
                                 <p class="duracao"><strong>Duração(min):</strong> {{ item.time }} min </p>
                             </div>
                         </div>
@@ -40,12 +41,12 @@
                     </div>
                     
                 </div>}
-            } @else {
-                <div class="col-12 p-4 text-center">
-                    <p>No record found. Create new record</p>
-                </div>
-            }
-        </div>
+
+        </div>} @else {
+            <div class="row col-12 p-4 text-center">
+                <p>Nenhum dado encontrado. Cadastre um novo exercício.</p>
+            </div>
+        }
     </div>
 
 
@@ -73,13 +74,13 @@
                         <input type="date" [(ngModel)]="exerciseObj.date" class="form-control" placeholder="date">
                     </div>
                     <div class="col-6">
-                        <label for="">Distância:</label>
-                        <input type="text" [(ngModel)]="exerciseObj.distance" class="form-control"
+                        <label for="">Distância(em Km):</label>
+                        <input type="number" [(ngModel)]="exerciseObj.distance" class="form-control"
                             placeholder="distance">
                     </div>
                     <div class="col-6">
-                        <label for="">Duração:</label>
-                        <input type="text" [(ngModel)]="exerciseObj.time" class="form-control" placeholder="time">
+                        <label for="">Duração(em minutos):</label>
+                        <input type="number" [(ngModel)]="exerciseObj.time" class="form-control" placeholder="time">
                     </div>
                 </div>
             </div>

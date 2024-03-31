@@ -90,14 +90,14 @@ export class Exercise {
   id: number;
   exercise: string; 
   date: string;
-  distance: string;
-  time: string;
+  distance: number;
+  time: number;
 
   constructor() {
     this.id = 0;
     this.exercise = '';
     this.date = '';
-    this.distance = '';
-    this.time = '';
+    this.distance =0;
+    this.time = 0;
   }
 }

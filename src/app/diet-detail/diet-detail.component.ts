@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { ButtonModule } from 'primeng/button';
+
 
 @Component({
   selector: 'app-diet-detail',
   standalone: true,
-  imports: [],
+  imports: [ButtonModule],
   templateUrl: './diet-detail.component.html',
   styleUrl: './diet-detail.component.scss'
 })
@@ -12,6 +14,7 @@ export class DietDetailComponent implements OnInit {
   dietId: number = 0;
   diets: any = [];
   diet: any = {};
+  Router: any;
 
   constructor(private activatedRoute: ActivatedRoute) { }
 
@@ -33,4 +36,5 @@ export class DietDetailComponent implements OnInit {
       return [];
     };
   }
+
 }

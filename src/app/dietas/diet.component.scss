@@ -40,13 +40,23 @@ input {
   padding-left: 70px;
   padding-right: 70px;
   grid-template-columns: repeat(3, 1fr);
+  margin-bottom: 30px;
 
   .card {
     @include card;
   }
 }
 
-@media screen and (max-width: 720px) {
+
+@media screen and (max-width: 1024px) {
+  .grid-section {
+      padding-left: 30px;
+      padding-right: 30px;
+      grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 760px) {
   .grid-section {
     padding: 0;
     grid-template-columns: 1fr;

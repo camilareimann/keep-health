@@ -1,12 +1,15 @@
 @import '../../assets/styles/variables';
 
 h2 {
+
     font-size: 30px;
     font-weight: 700;
     @include estiloTitulos;
 }
 
-.header {
+.row-header {
+    display: flex;
+    justify-content: space-between;
     padding-left: 70px;
     padding-right: 70px;
     margin-bottom: 30px;
@@ -19,6 +22,8 @@ h2 {
     padding-left: 70px;
     padding-right: 70px;
     grid-template-columns: repeat(3, 1fr);
+    margin-bottom: 30px;
+
 
     .card {
         background-color: #fff;
@@ -27,20 +32,25 @@ h2 {
         padding: 20px;
         text-align: center;
 
-        .card-header {
+        .cardheader {
             background: #fff;
         }
 
         .data {
-            margin-top: 5px;
+
             font-size: 14px;
         }
 
         .tituloEsporte {
-            text-transform: uppercase;
+            font-family: monospace;
+            text-transform: capitalize;
             @include estiloTitulos2;
-            font-size: 25px;
-            font-weight: 700;
+            font-size: 22px;
+            font-weight: 600;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         img {
@@ -64,6 +74,19 @@ h2 {
         .card-footer {
             background: #fff;
         }
+    }
+}
+
+.exercise-info {
+    .discancia {
+        padding: 0;
+        margin: 0;
+    }
+
+    .duracao {
+        margin-top: 5px;
+        padding: 0;
+        margin: 0;
     }
 }
 
@@ -120,7 +143,24 @@ h2 {
     }
 }
 
+
 @media screen and (max-width: 1024px) {
+    .grid-section {
+        padding-left: 50px;
+        padding-right: 50px;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 760px) {
+    .row-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
     .grid-section {
         padding: 0;
         grid-template-columns: 1fr;
