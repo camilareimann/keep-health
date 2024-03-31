@@ -57,7 +57,7 @@
             <!-- Modal body -->
             <div class="modal-body">
                 <div class="row">
-                    <div class="col-12">
+                    <div class="col-12 input-area">
                         <label for="exerciseSelect">Escolha o exercício:</label>
                         <select class="form-select" id="exerciseSelect" [(ngModel)]="exerciseObj.exercise">
                             <option value="" disabled selected>Escolha...</option>
@@ -69,16 +69,16 @@
                             <option value="musculação">musculação</option>
                         </select>
                     </div>
-                    <div class="col-12">
+                    <div class="col-12 input-area">
                         <label for="">Data:</label>
                         <input type="date" [(ngModel)]="exerciseObj.date" class="form-control" placeholder="date">
                     </div>
-                    <div class="col-6">
+                    <div class="col-6 input-area">
                         <label for="">Distância(em Km):</label>
                         <input type="number" [(ngModel)]="exerciseObj.distance" class="form-control"
                             placeholder="distance">
                     </div>
-                    <div class="col-6">
+                    <div class="col-6 input-area">
                         <label for="">Duração(em minutos):</label>
                         <input type="number" [(ngModel)]="exerciseObj.time" class="form-control" placeholder="time">
                     </div>

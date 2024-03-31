@@ -143,6 +143,19 @@ h2 {
     }
 }
 
+.input-area{
+    margin-top: 15px;
+
+    label{
+        font-family: monospace;
+        font-size: 1em;
+    }
+
+    input{
+        margin-top: 5px;
+    }
+}
+
 
 @media screen and (max-width: 1024px) {
     .grid-section {
@@ -166,3 +179,4 @@ h2 {
         grid-template-columns: 1fr;
     }
 }
+
