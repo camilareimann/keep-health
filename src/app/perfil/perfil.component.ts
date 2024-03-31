@@ -33,8 +33,8 @@ if (storedData && document.getElementById('profileData')) {
         <p><strong>Name:</strong> ${userData.nome}</p>
         <p><strong>Email:</strong> ${userData.email}</p>
         <p><strong>Date of Birth:</strong> ${userData.dataNascimento}</p>
-        <p><strong>Weight:</strong> ${userData.peso} kg</p>
-        <p><strong>Height:</strong> ${userData.altura} cm</p>
+        <p><strong>Peso:</strong> ${userData.peso} kg</p>
+        <p><strong>Altura:</strong> ${userData.altura } cm</p>
     `;
 
     const profileDataElement = document.getElementById('profileData');

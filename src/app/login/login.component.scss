@@ -1,4 +1,5 @@
 @import '../../assets/styles/variables';
+@import '../../assets/styles/mixin.scss';
 
 h2 {
   font-size: 30px;
@@ -7,7 +8,7 @@ h2 {
   text-align: center;
 }
 
-.form-content {
+.login {
   max-width: 400px;
   margin: 0 auto;
   padding: 20px;
@@ -15,58 +16,55 @@ h2 {
   font-family: monospace;
   font-size: 1.2em;
   background-color: #00ffee41;
-}
 
-.form-content fieldset {
-  margin-bottom: 20px;
-  border: none;
-  padding-right: 35px;
-}
+  label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: lighter;
+    color: #666;
+  }
 
-.form-content label {
-  display: block;
-  margin-bottom: 20px;
-  font-weight: lighter; 
-  color: #666; 
-}
+  input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 5px;
+    box-sizing: border-box;
+  }
 
-.form-content input {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  margin-top: 5px;
-  box-sizing: border-box;
-}
+  .form-btn {
+    margin-top: 20px;
 
-.form-content .form-btn button {
-  margin-right: 10px;
-  margin-bottom: 10px;
-}
+    button {
+      margin-right: 10px;
+    }
+  }
 
-.form-content button {
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  background-color: $main-color;
-  color: #fff;
-  cursor: pointer;
-}
+  button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: $main-color;
+    color: #fff;
+    cursor: pointer;
 
-.form-content button:hover {
-  color: #666;
-  background-color: #00ffec;
-}
+    &:hover {
+      color: #666;
+      background-color: #00ffec;
+    }
+  }
 
-.form-content button[type="submit"] {
-  background-color: $main-color;
-}
+  button[type="submit"] {
+    background-color: $main-color;
+  }
 
-.form-content button[type="submit"]:hover {
-  background-color: #00ffec;
-}
+  button[type="submit"]:hover {
+    background-color: #00ffec;
+  }
 
-.link-cadastro {
-  margin-top: 14px;
-  font-size: .8em;
+  .link-cadastro {
+    margin-top: 14px;
+    font-size: .8em;
+  }
 }
