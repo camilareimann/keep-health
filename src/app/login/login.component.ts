@@ -29,7 +29,6 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
     const storedData = JSON.parse(localStorage.getItem('cadastroData') || '{}');
-    
     const email = this.loginForm.get('email')?.value;
     const password = this.loginForm.get('password')?.value;
     
