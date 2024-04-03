@@ -4,40 +4,47 @@ import { CadastroComponent } from './cadastro/cadastro.component';
 import { LoginComponent } from './login/login.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { DietComponent } from './dietas/diet.component';
-import { DietDetailComponent } from './diet-detail/diet-detail.component';
 import { ExerciciosComponent } from './exercicios/exercicios.component';
+import { authGuard } from './shared/guardas/auth.guard';
+import { DietDetailGuard } from './shared/guardas/verify-permition.guard';
+
 export const routes: Routes = [
-    
+
     {
         path: "", //Rota inicial (assim que o projeto é 'buildado' ele entra nessa rota)
         redirectTo: "home", //redirecionamento (qual path que será redirecionado ao entrar na rota "")
         pathMatch: "full" //significa que a rota (path) deve ser inteiramente compatível com o redirectTo
     },
     {
-        path: "home", //rota para cadastro no portal
-        component: HomeComponent
+        path: "home",
+        component: HomeComponent,
+        canActivate: [authGuard]
     },
     {
-        path: "cadastro", //rota para cadastro no portal
-        component: CadastroComponent
+        path: "exercicios",
+        component: ExerciciosComponent,
+        canActivate: [authGuard]
     },
     {
-        path: "login", //rota para cadastro no portal
+        path: "login", 
         component: LoginComponent
     },
     {
-        path: "perfil", //rota para cadastro no portal
-        component: PerfilComponent
+        path: "cadastro", 
+        component: CadastroComponent
+    },
+    {
+        path: "perfil", 
+        component: PerfilComponent,
+        canActivate: [authGuard]
     },
     {
         path: 'diet',
-        children: [
-          { path: '', component: DietComponent },
-          { path: ':id', component: DietDetailComponent },
-        ]
-      },
-      {
-        path: "exercicios", 
-        component: ExerciciosComponent
+        component: DietComponent,
+        canActivate: [authGuard],
     },
+    {path: ':id', 
+    canActivateChild: [DietDetailGuard], 
+    loadChildren: () => import('./dietas/diet.module').then(m => m.DietModule)
+    }
 ];

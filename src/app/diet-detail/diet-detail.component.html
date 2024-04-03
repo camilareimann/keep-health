@@ -1,17 +1,19 @@
+<app-header></app-header>
+
 <section class="main">
   <section class="fruit-details">
-  <div class="image">
-    <img src="{{ diet.image }}" alt="" />
-  </div>
-  <div class="details">
-    <h2 class="titulo">{{ diet.name }}</h2>
-    <p>
-    {{ diet.description }}
-    </p>
-    <p> <b>{{ diet.calories}} kcal</b></p>
-  </div>
-</section>
-<!--  <section class="voltar">
-    <p-button icon="pi pi-search" severity="success"></p-button>
-  </section>-->
+    <div class="image">
+      <img src="{{ diet.image }}" alt="" />
+    </div>
+    <div class="details">
+      <h2 class="titulo">{{ diet.name }}</h2>
+      <p>
+        {{ diet.description }}
+      </p>
+      <p> <b>{{ diet.calories}} kcal</b></p>
+    </div>
+  </section>
+  <section class="voltar">
+    <button (click)="redirectToDiet()">Voltar</button>
+  </section>
 </section>

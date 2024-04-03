@@ -1,53 +1,30 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, RouterModule } from '@angular/router';
+import { RouterModule } from '@angular/router';
 import { ConversorAlturaPipe } from '../pipes/conversor-altura.pipe';
 import { AddressService } from '../services/localizao.service';
 import { FormsModule } from '@angular/forms';
+import { HeaderComponent } from '../shared/components/header/header.component';
 
 @Component({
   selector: 'app-perfil',
   standalone: true,
-  imports: [CommonModule, RouterModule, ConversorAlturaPipe, FormsModule],
+  imports: [CommonModule, RouterModule, ConversorAlturaPipe, FormsModule, HeaderComponent],
   templateUrl: './perfil.component.html',
   styleUrl: './perfil.component.scss'
 })
 
 export class PerfilComponent implements OnInit {
   userData: any;
-  cep!: "";
-  address!: string;
-  showAddress: boolean = false; 
+  cep: string = '';
+  address: string = '';
+  showAddress: boolean = false;
 
-  constructor(private route: ActivatedRoute, private addressService: AddressService) {}
+  constructor(private addressService: AddressService) { }
 
   ngOnInit(): void {
-    //CODIGO ANTIGO this.userData = history.state.userData;
-
-const storedData = localStorage.getItem('cadastroData');
-
-if (storedData && document.getElementById('profileData')) {
-    const userData = JSON.parse(storedData);
-    
-    const profileHtml = `
-        <p><strong>Name:</strong> ${userData.nome}</p>
-        <p><strong>Email:</strong> ${userData.email}</p>
-        <p><strong>Date of Birth:</strong> ${userData.dataNascimento}</p>
-        <p><strong>Peso:</strong> ${userData.peso} kg</p>
-        <p><strong>Altura:</strong> ${userData.altura } cm</p>
-    `;
-
-    const profileDataElement = document.getElementById('profileData');
-
-    if (profileDataElement) {
-        profileDataElement.innerHTML = profileHtml;
-    } else {
-        console.error("Element with ID 'profileData' not found.");
-    }
-} else {
-    console.error("No profile data found or element with ID 'profileData' not found.");
-}
-
+    const loggedUser = JSON.parse(localStorage.getItem('loggedUser') || '{}');
+    this.userData = loggedUser;
   }
 
   searchAddress(): void {
@@ -56,5 +33,4 @@ if (storedData && document.getElementById('profileData')) {
     });
     this.showAddress = true;
   }
-
 }

@@ -31,6 +31,7 @@ h1 {
 
 .nav {
     display: flex;
+    align-items: center;
 }
 
 a {
@@ -39,6 +40,15 @@ a {
     padding: 10px 15px;
     font-size: 18px;
     transition: .3s;
+
+    img{
+        width: 40px;
+        height: auto;
+        &:hover{
+            filter: hue-rotate(-10deg);
+            opacity: 1;
+        }
+    }
 }
 
 .nav a:hover {
@@ -64,13 +74,19 @@ a {
         padding: 0;
     }
 
-    .nav a{
+    .nav {
+    a{
         color: white;
         text-decoration: none;
         padding: 0px 15px;
         margin-bottom: 20px;
         font-size: 14px;
         transition: .3s;
+        img{
+            width: 30px;
+        }
     }
+
+}
 
 }

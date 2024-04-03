@@ -1,24 +1,28 @@
-<!--Neste exercício vamos criar a tela de login que irá conter:
+<section class="login-page">
 
-Um input para o email do usuário;
-Um inpit para a senha;
-Um botão ‘Entrar’;
-Um botão ‘Esqueci a senha’
-Um botão ou link (à sua escolha) para ‘Cadastrar-me’-->
-<div class="login">
-<form (ngSubmit)="onSubmit()" [formGroup]="loginForm" class="form-content">
-    <fieldset>
-        <h2>Login</h2>
-        <label for="email">Endereço de email: <input id="email" name="email" type="text" formControlName="email"></label>
-        <label for="password">Senha: <input id="password" name="password" type="password" formControlName="password"></label>
-    </fieldset>
-    <fieldset class="form-btn">
-        <button type="submit">Entrar</button>
-        <button type="form-btn" (click)="esqueciSenha()">Esqueci minha senha</button>
-        <div class="link-cadastro">
-            <a routerLink="/cadastro">Cadastrar-me</a>
+    <div class="imagem-section">
+        <img src="../../assets/main-img.svg" alt="keephealth-img">
+    </div>
+    <section class="login-section">
+        <div class="textos"><h1 class="titulo">Seja bem-vindo(a) ao Keep Health</h1>
+        <p>Faça seu login ou cadastre-se para começar.</p></div>
+        <div class="login">
+            <form (ngSubmit)="onSubmit()" [formGroup]="loginForm" class="form-content">
+                <fieldset>
+                    <label for="email">Endereço de email: <input id="email" name="email" type="text"
+                            formControlName="email"></label>
+                    <label for="password">Senha: <input id="password" name="password" type="password"
+                            formControlName="password"></label>
+                </fieldset>
+                <fieldset class="form-btn">
+                    <button type="submit">Entrar</button>
+                    <button type="form-btn" (click)="esqueciSenha()">Esqueci minha senha</button>
+                    <div class="link-cadastro">
+                        <a routerLink="/cadastro">Cadastrar-me</a>
+                    </div>
+                </fieldset>
+            </form>
         </div>
-        <!--<button type="button" (click)="redirectToCadastro()">Cadastrar</button>-->
-    </fieldset>
-</form>
-</div>
+    </section>
+
+</section>

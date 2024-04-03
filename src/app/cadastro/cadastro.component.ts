@@ -1,18 +1,20 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { CustomValidatorService } from '../../../shared/services/custom-validator.service';
+import { CustomValidatorService } from '../shared/services/custom-validator.service';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cadastro',
   standalone: true,
-  imports: [ReactiveFormsModule, CommonModule], //Importação do Modulo de Reative Forms
+  imports: [ReactiveFormsModule, CommonModule],
   providers: [CustomValidatorService],
   templateUrl: './cadastro.component.html',
   styleUrl: './cadastro.component.scss'
 })
+
 export class CadastroComponent {
+
   form = new FormGroup({
     nome: new FormControl('', [Validators.required, this.customValidatorService.validarNomeCompleto()]),
     email: new FormControl('', [Validators.required, Validators.email]),
@@ -29,33 +31,41 @@ export class CadastroComponent {
     private Router: Router) { }
 
   cadastrar() {
-    if (this.form.valid && this.form.value.senha === this.form.value.confirmarSenha) {
-      const userCode = Math.floor(1000 + Math.random() * 9000);
+    const listaUsers = localStorage.getItem('cadastroData');
+    const users = listaUsers ? JSON.parse(listaUsers) : [];
 
-      // Defina o código do usuário diretamente no objeto de formulário
-      this.form.patchValue({ codigoUsuario: userCode.toString() });
+    const existingUser = users.find((user: any) => user.email === this.form.value.email);
 
-      const formData = this.form.value;
-
-      localStorage.setItem('cadastroData', JSON.stringify(formData))
+    if (existingUser) {
+      alert('User already exists.');
       
-      this.form.controls['nome'].setValue('');
-      this.form.controls['email'].setValue('');
-      this.form.controls['dataNascimento'].setValue('');
-      this.form.controls['peso'].setValue('');
-      this.form.controls['altura'].setValue('');
-      this.form.controls['senha'].setValue('');
-      this.form.controls['confirmarSenha'].setValue('');
-
-      this.Router.navigate(['/login']);
-
     } else {
-      alert('forumulario invalido')
+
+      if (this.form.valid && this.form.value.senha === this.form.value.confirmarSenha) {
+
+        const userCode = Math.floor(1000 + Math.random() * 9000);
+        this.form.patchValue({ codigoUsuario: userCode.toString() });
+
+        users.push(this.form.value);
+        localStorage.setItem('cadastroData', JSON.stringify(users));
+        
+        this.form.controls['nome'].setValue('');
+        this.form.controls['email'].setValue('');
+        this.form.controls['dataNascimento'].setValue('');
+        this.form.controls['peso'].setValue('');
+        this.form.controls['altura'].setValue('');
+        this.form.controls['senha'].setValue('');
+        this.form.controls['confirmarSenha'].setValue('');
+
+        this.Router.navigate(['/login']);
+      } else {
+        alert('formulario invalido');
+      }
     }
   }
 
-  goToLogin(){
-    this.Router.navigate(['/login']);
-  }
+goToLogin(){
+  this.Router.navigate(['/login']);
+}
 
 }
