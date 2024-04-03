@@ -32,7 +32,7 @@
 }
 
 .cadastro {
-  width: 60%;
+  width: 400px;
   padding: 40px 20px;
   border-radius: 24px;
   font-family: monospace;
@@ -74,7 +74,7 @@ h2 {
   text-align: center;
 }
 
-.form-btn{
+.form-btn {
   margin-top: 20px;
 }
 
@@ -100,28 +100,33 @@ h2 {
   background-color: #00ffec;
 }
 
-    .erro-formulario {
-      label, span {
-        color: red;
-      }
+.erro-formulario {
 
-      input {
-        border-color: red;
-      }
+  label,
+  span {
+    color: red;
+  }
+
+  input {
+    border-color: red;
+  }
+}
+
+
+@media screen and (max-width: 760px) {
+  .cadastro-section {
+    margin-top: 50px;
+
+    .cadastro {
+      width: 350px;
     }
 
-
-    @media screen and (max-width: 760px) {
-      .cadastro-section {
-        width: 100%;
-        .cadastro{
-          width: 100%;
-          margin-left: 10px;
-          margin-right: 10px;
-        }
-      }
-
-      .imagem-section {
-        display: none;
-      }
+    .cadastrar{
+      margin-bottom: 10px;
     }
+  }
+
+  .imagem-section {
+    display: none;
+  }
+}

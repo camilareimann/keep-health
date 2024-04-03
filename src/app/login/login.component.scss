@@ -46,7 +46,7 @@
   }
 
   .login {
-    width: 60%;
+    width: 400px;
     padding: 40px 20px;
     border-radius: 24px;
     font-family: monospace;
@@ -107,14 +107,14 @@
 
 }
 
-
-@media screen and (max-width: 720px) {
-  .login-section {
-    width: 100%;
+@media screen and (max-width: 760px) {
+  .login-section{
     .login{
-      width: 100%;
-      margin-left: 10px;
-      margin-right: 10px;
+      width: 350px;
+
+      .entrar{
+        margin-bottom: 10px;
+      }
     }
   }
   .imagem-section{
