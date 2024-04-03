@@ -1,17 +1,18 @@
+<app-header></app-header>
 <div class="container">
+    <h2>Perfil do Usuário</h2>
     <div class="content form-content">
-        <h2>Perfil do Usuário</h2>
+        
         <div class="profile-container " id="profileData">
             <div *ngIf="userData" id="cadastroList">
-                <h2>Perfil do Usuário</h2>
-                <p>Nome: {{ userData.nome }}</p>
-                <p>Email: {{ userData.email }}</p>
-                <p>Peso: {{ userData.peso }} kg</p>
-                <p>Altura: {{ userData.altura | conversorAltura }}</p>
-                <p>Código do Usuário: {{ userData.codigoUsuario }}</p>
+                <p><strong>Nome:</strong> {{ userData.nome }}</p>
+                <p><strong>Email:</strong> {{ userData.email }}</p>
+                <p><strong>Peso:</strong> {{ userData.peso }}kg</p>
+                <p><strong>Altura:</strong> {{ userData.altura | conversorAltura }}</p>
+                <p><strong>Código do Usuário: </strong>{{ userData.codigoUsuario }}</p>
             </div>
         </div>
-        <label><b>Localização (insira seu CEP)</b> : <input type="text" [(ngModel)]="cep"></label>
+        <label><strong>Localização (insira seu CEP)</strong> : <input type="text" [(ngModel)]="cep"></label>
         <button class="form-btn" (click)="searchAddress()">Buscar</button>
 
         <div class="showAddress" *ngIf="showAddress">

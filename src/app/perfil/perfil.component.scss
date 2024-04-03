@@ -1,10 +1,14 @@
 @import '../../assets/styles/variables';
 
+.container{
+    padding-top: 150px;
+}
+
 .form-content {
     max-width: 400px;
     margin: 0 auto;
-    padding: 20px;
-    border-radius: 5px;
+    padding: 40px 20px;
+    border-radius: 24px;
     font-family: monospace;
     font-size: 1.2em;
     color: #666;
@@ -59,6 +63,7 @@ h2 {
     background-color: #00ffec;
 }
 
+
 .showAddress {
     margin-top: 20px;
     background-color: white;
@@ -66,3 +71,4 @@ h2 {
     border-radius: 5px;
     flex-grow: 1;
 }
+

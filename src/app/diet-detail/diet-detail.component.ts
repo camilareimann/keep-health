@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
+import { HeaderComponent } from '../shared/components/header/header.component';
 
 
 @Component({
   selector: 'app-diet-detail',
   standalone: true,
-  imports: [ButtonModule],
+  imports: [ButtonModule, HeaderComponent],
   templateUrl: './diet-detail.component.html',
   styleUrl: './diet-detail.component.scss'
 })
@@ -16,7 +17,7 @@ export class DietDetailComponent implements OnInit {
   diet: any = {};
   Router: any;
 
-  constructor(private activatedRoute: ActivatedRoute) { }
+  constructor(private activatedRoute: ActivatedRoute, private Routers: Router) { }
 
   ngOnInit(): void {
     window.scrollTo(0, 0);
@@ -35,6 +36,10 @@ export class DietDetailComponent implements OnInit {
     } else {
       return [];
     };
+  }
+
+  redirectToDiet() {
+    this.Routers.navigate(['/diet']);
   }
 
 }

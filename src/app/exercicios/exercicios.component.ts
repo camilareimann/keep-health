@@ -3,11 +3,12 @@ import { Component, ElementRef, ViewChild, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterOutlet } from '@angular/router';
 import { DialogModule } from 'primeng/dialog';
+import { HeaderComponent } from '../shared/components/header/header.component';
 
 @Component({
   selector: 'app-exercicio',
   standalone: true,
-  imports: [RouterOutlet, FormsModule, DialogModule, CommonModule],
+  imports: [RouterOutlet, FormsModule, DialogModule, CommonModule, HeaderComponent],
   templateUrl: './exercicios.component.html',
   styleUrl: './exercicios.component.scss'
 })

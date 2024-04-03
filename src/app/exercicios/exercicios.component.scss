@@ -1,7 +1,10 @@
 @import '../../assets/styles/variables';
 
-h2 {
+.container{
+    padding-top: 150px;
+}
 
+h2 {
     font-size: 30px;
     font-weight: 700;
     @include estiloTitulos;

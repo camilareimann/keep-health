@@ -1,9 +1,8 @@
-import { CommonModule, DatePipe } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { SharedModule } from '../../shared/shared/shared.module'; 
-import { HomeComponent } from './home/home.component';
+import { SharedModule } from './shared/shared/shared.module'; 
+import { LoginComponent } from './login/login.component';
 
 @Component({
   selector: 'app-root',
@@ -14,6 +13,7 @@ import { HomeComponent } from './home/home.component';
     CommonModule,
     SharedModule,
     RouterOutlet,
+    LoginComponent
   ],
 })
 export class AppComponent {

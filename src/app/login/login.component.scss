@@ -1,70 +1,118 @@
 @import '../../assets/styles/variables';
 @import '../../assets/styles/mixin.scss';
 
-h2 {
-  font-size: 30px;
-  font-weight: 700;
-  @include estiloTitulos;
-  text-align: center;
+
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Center vertically */
+  height: 100vh; /* Adjust the height as needed */
+  padding: 0 70px;
 }
 
-.login {
-  max-width: 400px;
-  margin: 0 auto;
-  padding: 20px;
-  border-radius: 5px;
-  font-family: monospace;
-  font-size: 1.2em;
-  background-color: #00ffee41;
-  
-  label {
-    display: block;
-    margin-bottom: 10px;
-    font-weight: lighter;
-    color: #666;
-  }
+.imagem-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
 
-  input {
+  img {
     width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-top: 5px;
-    box-sizing: border-box;
+    max-width: 80%;
+  }
+}
+
+.login-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+
+  .textos{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
   }
 
-  .form-btn {
-    margin-top: 20px;
+  .titulo {
+    font-family: monospace;
+    font-size: 30px;
+    font-weight: 700;
+    width: 400px;
+    @include estiloTitulos;
+    text-align: center;
+  }
+
+  .login {
+    width: 400px;
+    padding: 40px 20px;
+    border-radius: 24px;
+    font-family: monospace;
+    font-size: 1.2em;
+    background-color: #00ffee41;
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: lighter;
+      color: #666;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-top: 5px;
+      box-sizing: border-box;
+    }
+
+    .form-btn {
+      margin-top: 20px;
+
+      button {
+        margin-right: 10px;
+      }
+    }
 
     button {
-      margin-right: 10px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      background-color: $main-color;
+      color: #fff;
+      cursor: pointer;
+
+      &:hover {
+        color: #666;
+        background-color: #00ffec;
+      }
     }
-  }
 
-  button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    background-color: $main-color;
-    color: #fff;
-    cursor: pointer;
+    button[type="submit"] {
+      background-color: $main-color;
+    }
 
-    &:hover {
-      color: #666;
+    button[type="submit"]:hover {
       background-color: #00ffec;
     }
+
+    .link-cadastro {
+      margin-top: 14px;
+      font-size: .8em;
+    }
   }
 
-  button[type="submit"] {
-    background-color: $main-color;
-  }
+}
 
-  button[type="submit"]:hover {
-    background-color: #00ffec;
+@media screen and (max-width: 760px) {
+  .login-section {
+    margin-right: 10px;
+    margin-left: 10px; /* Add margin for mobile devices */
   }
-
-  .link-cadastro {
-    margin-top: 14px;
-    font-size: .8em;
+  .imagem-section{
+    display: none;
   }
 }
