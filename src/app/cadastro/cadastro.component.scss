@@ -32,7 +32,7 @@
 }
 
 .cadastro {
-  width: 400px;
+  width: 60%;
   padding: 40px 20px;
   border-radius: 24px;
   font-family: monospace;
@@ -113,8 +113,12 @@ h2 {
 
     @media screen and (max-width: 760px) {
       .cadastro-section {
-        margin-right: 10px;
-        margin-left: 10px;
+        width: 100%;
+        .cadastro{
+          width: 100%;
+          margin-left: 10px;
+          margin-right: 10px;
+        }
       }
 
       .imagem-section {
