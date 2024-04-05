@@ -11,9 +11,9 @@ import { DietDetailGuard } from './shared/guardas/verify-permition.guard';
 export const routes: Routes = [
 
     {
-        path: "", //Rota inicial (assim que o projeto é 'buildado' ele entra nessa rota)
-        redirectTo: "home", //redirecionamento (qual path que será redirecionado ao entrar na rota "")
-        pathMatch: "full" //significa que a rota (path) deve ser inteiramente compatível com o redirectTo
+        path: "", 
+        redirectTo: "home", 
+        pathMatch: "full" 
     },
     {
         path: "home",
@@ -26,15 +26,15 @@ export const routes: Routes = [
         canActivate: [authGuard]
     },
     {
-        path: "login", 
+        path: "login",
         component: LoginComponent
     },
     {
-        path: "cadastro", 
+        path: "cadastro",
         component: CadastroComponent
     },
     {
-        path: "perfil", 
+        path: "perfil",
         component: PerfilComponent,
         canActivate: [authGuard]
     },
@@ -43,8 +43,9 @@ export const routes: Routes = [
         component: DietComponent,
         canActivate: [authGuard],
     },
-    {path: ':id', 
-    canActivateChild: [DietDetailGuard], 
-    loadChildren: () => import('./dietas/diet.module').then(m => m.DietModule)
+    {
+        path: ':id',
+        canActivateChild: [DietDetailGuard],
+        loadChildren: () => import('./dietas/diet.module').then(m => m.DietModule)
     }
 ];
