@@ -2,10 +2,10 @@
 @import '../../assets/styles/mixin.scss';
 
 .main {
-    padding-top: 150px;
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100vh;
     padding-left: 70px;
     padding-right: 70px;
 
@@ -17,7 +17,7 @@
         width: 50%;
 
         img {
-           width: 400px;
+           width: 60%;
         }
     }
 
@@ -53,6 +53,9 @@
     .text-section{
         width: 100%;
         margin-bottom: 20px;
+    }
+    .imagem-section{
+        width: 100%;
     }
     }
   }
